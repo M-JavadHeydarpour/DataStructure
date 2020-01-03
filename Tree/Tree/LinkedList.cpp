@@ -1,12 +1,12 @@
 #include "LinkedList.h"
 
 
-void LinkedList::Insert(Node ** head, Node * prev, int data,int status)
+void LinkedList::Insert(Node ** head, Node * prev, int data, int status)
 {
 	//allocate new node for insert it to linkedlist
 	Node *newNode = new Node(data);
 
-	if (status == 0) 
+	if (status == 0)
 	{
 		//Make next of new node as head and prev as null
 		newNode->next = (*head);
@@ -33,7 +33,7 @@ void LinkedList::Insert(Node ** head, Node * prev, int data,int status)
 
 		}
 
-		while(last->next != NULL)
+		while (last->next != NULL)
 		{
 			last = last->next;
 		}
@@ -62,8 +62,8 @@ void LinkedList::Insert(Node ** head, Node * prev, int data,int status)
 
 void LinkedList::Delete(Node **head, int data)
 {
-	Node *temp = (*head) , *prev = NULL ;
-	
+	Node *temp = (*head), *prev = NULL;
+
 	if (temp != NULL && temp->data == data)
 	{
 		*head = temp->next;
@@ -80,10 +80,10 @@ void LinkedList::Delete(Node **head, int data)
 
 	prev->next = temp->next;
 	if (temp->next != NULL)
-		temp->next->prev= temp->prev;
+		temp->next->prev = temp->prev;
 	//free(temp);
 
-	
+
 }
 
 void LinkedList::print(Node * node)

@@ -1,7 +1,5 @@
 #include "BTree.h"
 
-
-
 void BTree::Insert(Node * root, int data)
 {
 	
@@ -19,11 +17,11 @@ void BTree::Insert(Node * root, int data)
 		//{
 			if (root->prev == NULL)
 			{
-				root->prev->data = data;
+				root->prev = insert;
 			}
 			else if (root->next == NULL)
 			{
-				root->next->data = data;
+				root->next = insert;
 			}
 			else
 			{
@@ -102,6 +100,12 @@ void BTree::Postorder(Node * root)
 	Postorder(root->prev);
 	Postorder(root->next);
 	postorder->Insert(&head, head, root->data, 1);
+}
+
+void BTree::printorder()
+{
+	//inorder.print()
+	//preorder.print(head);
 }
 
 BTree::BTree()

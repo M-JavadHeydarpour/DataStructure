@@ -16,8 +16,8 @@ public:
 	Node * Delete(Node * data, int amount = NULL);
 	void Inorder(Node * root);
 	void Preorder(Node * root);
-	LinkedList * Postorder(Node * root);
-
+	void Postorder(Node * root);
+	void printorder();
 	BTree();
 	~BTree();
 };
